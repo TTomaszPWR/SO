@@ -10,8 +10,8 @@ import static lab1.ProcessGenerator.starvingProcessesExample;
 public class Main {
 
     public static void main(String[] args) {
-        Queue<Process> processes = generateProcesses(20);
-        //Queue<Process> processes = starvingProcessesExample();
+        //Queue<Process> processes = generateProcesses(20);
+        Queue<Process> processes = starvingProcessesExample();
 
 
         System.out.println();
@@ -23,6 +23,6 @@ public class Main {
         SJF(new LinkedList<>(processes));
 
         System.out.println("RR:");
-        RR(new LinkedList<>(processes), 20); // przykładowy kwant czasu dla RR
+        RR(new LinkedList<>(processes), 30); // przykładowy kwant czasu dla RR
     }
 }

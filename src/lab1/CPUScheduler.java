@@ -72,8 +72,10 @@ public class CPUScheduler {
         int currentTime = 0;
         int totalWaitingTime = 0;
         int index=0;
+        int countOfSwitching = 0;
 
         while (!processList.isEmpty()) {
+            countOfSwitching++;
             Process currentProcess = processList.get(index);
             if(currentProcess.getArrivalTime() <= currentTime) {
                 if (currentProcess.getBurstTime() <= timeQuantum) {
@@ -96,6 +98,7 @@ public class CPUScheduler {
 
         double averageWaitingTime = (double) totalWaitingTime / size;
         System.out.println("Average Waiting Time (RR): " + averageWaitingTime);
+        System.out.println("Count of switching: " + countOfSwitching);
     }
 
 }
